@@ -83,4 +83,15 @@ let heart = 0;
 
   let copyCount = 0;
 const copyCountElement = document.getElementById("copyCount");
-
+document.querySelectorAll(".copysBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const number = btn.dataset.number;  
+    navigator.clipboard.writeText(number) 
+      .then(() => {
+        copyCount++;                    
+        copyCountElement.textContent = copyCount;
+        alert(`Number ${number} copied!`);
+      })
+      .catch(err => console.error("Copy failed:", err));
+  });
+});
