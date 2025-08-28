@@ -81,4 +81,6 @@ let heart = 0;
   });
 
 
-  
+  let copyCount = 0;
+const copyCountElement = document.getElementById("copyCount");
+
